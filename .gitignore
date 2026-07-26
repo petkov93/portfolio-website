@@ -31,7 +31,3 @@ yarn-error.log*
 
 # Agent local scratch
 .scratch/
-
-# Playwright
-test-results/
-playwright-report/

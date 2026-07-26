@@ -24,7 +24,7 @@ function renderProjectCard(project, labels) {
        </div>`;
 
   return `
-    <article class="project-card ${isFlagship ? 'project-card--flagship' : ''}" data-testid="${testId}">
+    <article class="project-card motion-card ${isFlagship ? 'project-card--flagship' : ''}" data-testid="${testId}">
       <div class="project-card__meta">
         <span class="project-status">${escapeHtml(project.status)}</span>
         ${project.type === 'desktop' ? `<span class="project-type">${escapeHtml(labels.desktopApp)}</span>` : ''}
@@ -77,7 +77,7 @@ export function renderPortfolio(content) {
     </header>
 
     <main>
-      <section id="hero" class="section section-hero glass-panel" aria-labelledby="hero-heading">
+      <section id="hero" class="section section-hero glass-panel motion-reveal" data-motion-reveal aria-labelledby="hero-heading">
         <div class="hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">${escapeHtml(hero.location)}</p>
@@ -95,7 +95,7 @@ export function renderPortfolio(content) {
         </div>
       </section>
 
-      <section id="about" class="section glass-panel" aria-labelledby="about-heading">
+      <section id="about" class="section glass-panel motion-reveal" data-motion-reveal aria-labelledby="about-heading">
         <h2 id="about-heading">${escapeHtml(sections.about)}</h2>
         <div class="about-grid">
           <div class="about-intro">${about.bodyHtml}</div>
@@ -113,20 +113,20 @@ export function renderPortfolio(content) {
         </div>
       </section>
 
-      <section id="current-mission" class="section glass-panel" aria-labelledby="mission-heading">
+      <section id="current-mission" class="section glass-panel motion-reveal" data-motion-reveal aria-labelledby="mission-heading">
         <h2 id="mission-heading">${escapeHtml(sections.currentMission)}</h2>
         <div class="mission-copy">${currentMission.bodyHtml}</div>
         ${renderList(currentMission.focus, 'mission-list')}
       </section>
 
-      <section id="projects" class="section" aria-labelledby="projects-heading">
+      <section id="projects" class="section motion-reveal" data-motion-reveal aria-labelledby="projects-heading">
         <h2 id="projects-heading">${escapeHtml(sections.projects)}</h2>
         <div class="projects-grid">
           ${projects.map((project) => renderProjectCard(project, labels)).join('')}
         </div>
       </section>
 
-      <section id="tech-stack" class="section glass-panel" aria-labelledby="tech-heading">
+      <section id="tech-stack" class="section glass-panel motion-reveal" data-motion-reveal aria-labelledby="tech-heading">
         <h2 id="tech-heading">${escapeHtml(sections.techStack)}</h2>
         <div class="stack-grid">
           <div>
@@ -144,7 +144,7 @@ export function renderPortfolio(content) {
         </div>
       </section>
 
-      <section id="education" class="section glass-panel" aria-labelledby="education-heading">
+      <section id="education" class="section glass-panel motion-reveal" data-motion-reveal aria-labelledby="education-heading">
         <h2 id="education-heading">${escapeHtml(sections.education)}</h2>
         <div class="education-grid">
           <div>
@@ -171,7 +171,7 @@ export function renderPortfolio(content) {
         <div class="education-body">${education.bodyHtml}</div>
       </section>
 
-      <section id="contact" class="section glass-panel section-contact" aria-labelledby="contact-heading">
+      <section id="contact" class="section glass-panel section-contact motion-reveal" data-motion-reveal aria-labelledby="contact-heading">
         <h2 id="contact-heading">${escapeHtml(sections.contact)}</h2>
         <div class="contact-copy">${contact.bodyHtml}</div>
         <div class="contact-links">

@@ -1,4 +1,9 @@
 const EXTERNAL_LINK_ATTRS = 'target="_blank" rel="noopener noreferrer"';
+const NEW_TAB_HINT = '<span class="sr-only"> (opens in new tab)</span>';
+
+function isExternalHref(href) {
+  return Boolean(href && href !== '#');
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -19,11 +24,11 @@ function renderProjectCard(project, labels) {
   const hasLiveDemo = project.liveDemo && project.liveDemo !== '#';
   const links = hasLiveDemo
     ? `<div class="project-links">
-         <a class="btn btn-primary" href="${escapeHtml(project.liveDemo)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.liveDemo)}</a>
-         <a class="btn btn-ghost" href="${escapeHtml(project.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}</a>
+         <a class="btn btn-primary" href="${escapeHtml(project.liveDemo)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.liveDemo)}${NEW_TAB_HINT}</a>
+         <a class="btn btn-ghost" href="${escapeHtml(project.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}${NEW_TAB_HINT}</a>
        </div>`
     : `<div class="project-links">
-         <a class="btn btn-ghost" href="${escapeHtml(project.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}</a>
+         <a class="btn btn-ghost" href="${escapeHtml(project.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}${NEW_TAB_HINT}</a>
        </div>`;
 
   return `
@@ -51,10 +56,12 @@ export function renderPortfolio(content) {
       ? `<div class="certificates" data-testid="certificates">
            <h3>${escapeHtml(labels.certificates)}</h3>
            <ul>${certificates.certificates
-             .map(
-               (cert) =>
-                 `<li><a href="${escapeHtml(cert.url || '#')}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(cert.title)}</a> — ${escapeHtml(cert.provider)}</li>`
-             )
+             .map((cert) => {
+               const url = cert.url || '#';
+               const externalAttrs = isExternalHref(url) ? ` ${EXTERNAL_LINK_ATTRS}` : '';
+               const newTabHint = isExternalHref(url) ? NEW_TAB_HINT : '';
+               return `<li><a href="${escapeHtml(url)}"${externalAttrs}>${escapeHtml(cert.title)}${newTabHint}</a> — ${escapeHtml(cert.provider)}</li>`;
+             })
              .join('')}</ul>
          </div>`
       : '';
@@ -89,7 +96,7 @@ export function renderPortfolio(content) {
             <blockquote class="hero-tagline">${escapeHtml(hero.tagline)}</blockquote>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#projects">${escapeHtml(hero.ctaProjects)}</a>
-              <a class="btn btn-ghost" href="${escapeHtml(hero.cvHref)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(hero.ctaCv)}</a>
+              <a class="btn btn-ghost" href="${escapeHtml(hero.cvHref)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(hero.ctaCv)}${NEW_TAB_HINT}</a>
             </div>
           </div>
           <div class="hero-visual">
@@ -179,8 +186,8 @@ export function renderPortfolio(content) {
         <div class="contact-copy">${contact.bodyHtml}</div>
         <div class="contact-links">
           <a class="btn btn-primary" href="mailto:${escapeHtml(contact.email)}">${escapeHtml(labels.email)}</a>
-          <a class="btn btn-ghost" href="${escapeHtml(contact.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}</a>
-          <a class="btn btn-ghost" href="${escapeHtml(contact.cvHref)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.downloadCv)}</a>
+          <a class="btn btn-ghost" href="${escapeHtml(contact.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}${NEW_TAB_HINT}</a>
+          <a class="btn btn-ghost" href="${escapeHtml(contact.cvHref)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.downloadCv)}${NEW_TAB_HINT}</a>
         </div>
       </section>
     </main>

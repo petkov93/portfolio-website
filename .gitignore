@@ -35,3 +35,7 @@ yarn-error.log*
 # Playwright
 test-results/
 playwright-report/
+
+# Vite cache
+
+.vite/

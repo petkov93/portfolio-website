@@ -36,9 +36,9 @@ labels:
   email: Email
   downloadCv: Download CV
   desktopApp: Desktop app
-footer: © {year} Petko Petkov — Backend Developer
+footer: © {year} Petko Petkov — Python Backend Developer
 metaDescription: >-
-  Petko Petkov — Backend Developer building practical software that solves
+  Petko Petkov — Python Backend Developer building practical software that solves
   real-world problems.
-pageTitle: Petko Petkov — Backend Developer
+pageTitle: Petko Petkov — Python Backend Developer
 ---

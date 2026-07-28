@@ -4,10 +4,9 @@ focus:
   - Backend development
   - Python ecosystem
   - Django
-  - Learning Docker
-  - Learning PostgreSQL
-  - Learning FastAPI
+  - Linux environments
+  - Bash scripting
   - AI Engineering
 ---
 
-Currently focused on deepening backend craft while shipping projects that hold up to real daily use.
+Focused on shipping reliable Python/Django backends, working comfortably on Linux with bash, and building tools I use daily—including AI experiments where they solve a real problem.

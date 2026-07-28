@@ -1,19 +1,20 @@
 ---
 strengths:
-  - Problem solving
-  - Curiosity
-  - Fast learner
-  - Analytical thinking
-  - Enjoy learning how systems work internally
+  - Structured problem solving
+  - Genuine curiosity about how things work
+  - Quick to learn new tools and concepts
+  - Analytical, detail-oriented thinking
+  - Motivated to understand systems at a deeper level
 improvements:
-  - I naturally explore related improvements while solving problems, which can sometimes lead to context switching. I'm actively improving my ability to prioritize and finish one task before expanding into additional features.
+  - When I spot a related improvement mid-task, I can expand scope before closing the original work. I'm practicing tighter prioritization—shipping one solid outcome before reaching for the next idea.
 careerTransition: >-
-  I transitioned from non-IT work into software development, bringing hands-on
-  problem-solving habits from factory and technical roles into how I build software today.
+  I moved into software from factory and technical roles, where fixing real
+  equipment on tight deadlines taught me to diagnose problems methodically—a
+  habit I now apply when building backend systems.
 ---
 
-I enjoy building practical software that solves real-world problems.
+I build software I actually use—starting from problems I run into in daily life.
 
-I originally became interested in programming because I was fascinated by how a few lines of code could automate hours of repetitive work. Even before programming, I enjoyed experimenting with technology—from installing custom Android ROMs to repairing and modifying hardware.
+Programming clicked for me when I realized a short script could replace hours of repetitive work. Long before that, I was already tinkering: flashing custom Android ROMs, repairing hardware, and taking things apart to see how they worked.
 
-Today I enjoy building applications that I personally use while continuously learning new technologies.
+That same instinct drives me today. I ship projects, see what breaks under real use, and keep iterating.

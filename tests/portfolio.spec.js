@@ -40,7 +40,7 @@ test.describe('Portfolio page behavior', () => {
     await page.goto('/');
     const hero = page.locator('#hero');
     await expect(hero.getByRole('heading', { level: 1 })).toHaveText('Petko Petkov');
-    await expect(hero.getByText('Backend Developer')).toBeVisible();
+    await expect(hero.getByText('Python Backend Developer')).toBeVisible();
     await expect(
       hero.getByText('Building practical software that solves real-world problems')
     ).toBeVisible();
@@ -52,7 +52,7 @@ test.describe('Portfolio page behavior', () => {
     const about = page.locator('#about');
     await expect(about.getByText('Strengths')).toBeVisible();
     await expect(about.getByText('Areas for Improvement')).toBeVisible();
-    await expect(about.getByText(/transitioned from non-IT work/i)).toBeVisible();
+    await expect(about.getByText(/moved into software from factory/i)).toBeVisible();
   });
 
   test('finance tracker is featured with live demo and github links', async ({ page }) => {
@@ -63,14 +63,16 @@ test.describe('Portfolio page behavior', () => {
     await expect(flagship.getByRole('link', { name: /github/i })).toBeVisible();
   });
 
-  test('smaller projects expose github links only', async ({ page }) => {
+  test('smaller projects expose github links; live demo when deployed', async ({ page }) => {
     await page.goto('/');
     const standardCards = page.locator('[data-testid="project-card-standard"]');
     await expect(standardCards).toHaveCount(3);
     for (const card of await standardCards.all()) {
       await expect(card.getByRole('link', { name: /github/i })).toBeVisible();
-      await expect(card.getByRole('link', { name: /live demo/i })).toHaveCount(0);
     }
+    await expect(
+      standardCards.filter({ hasText: 'AI Chatbot' }).getByRole('link', { name: /live demo/i })
+    ).toBeVisible();
   });
 
   test('contact surface exposes email, github, and cv download', async ({ page }) => {

@@ -14,7 +14,8 @@ function renderList(items, className = 'tag-list') {
 function renderProjectCard(project, labels) {
   const isFlagship = project.featured;
   const testId = isFlagship ? 'project-card-flagship' : 'project-card-standard';
-  const links = isFlagship
+  const hasLiveDemo = project.liveDemo && project.liveDemo !== '#';
+  const links = hasLiveDemo
     ? `<div class="project-links">
          <a class="btn btn-primary" href="${escapeHtml(project.liveDemo)}">${escapeHtml(labels.liveDemo)}</a>
          <a class="btn btn-ghost" href="${escapeHtml(project.github)}">${escapeHtml(labels.github)}</a>

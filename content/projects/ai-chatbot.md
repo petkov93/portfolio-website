@@ -3,8 +3,9 @@ title: AI Chatbot
 slug: ai-chatbot
 featured: false
 status: Complete
-type: desktop
-github: "#"
+type: web
+github: https://github.com/petkov93/streamlit-chatbot
+liveDemo: https://assistant-bob.streamlit.app/
 tech:
   - Python
   - Streamlit

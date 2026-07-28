@@ -2,10 +2,10 @@
 formal:
   - title: Computer Systems and Technologies
     period: "2008–2012"
+  - title: Software Engineering with Python — SoftUni Bulgaria
+    period: 2024–present
 selfLearning:
   - Udemy Python
-  - SoftUni Python Fundamentals
-  - SoftUni JavaScript Front-End
 currentlyStudying:
   - SoftUni Full Stack Python (ongoing)
 ---

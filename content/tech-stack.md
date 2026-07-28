@@ -5,20 +5,17 @@ backend:
   - REST APIs
   - PostgreSQL
   - Authentication
+  - Linux environments
+  - Bash scripting
   - Automation
 interests:
-  - Backend Development
-  - Python
-  - Django
-  - Automation
+  - Backend development
+  - Python ecosystem
+  - Automation & workflows
   - AI Engineering
+  - API design
   - Security
-  - APIs
-  - Workflows
 learning:
-  - Docker
-  - PostgreSQL
-  - Redis
-  - FastAPI
+  - SoftUni Full Stack Python
   - AI Engineering
 ---

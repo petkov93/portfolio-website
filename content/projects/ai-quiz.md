@@ -4,7 +4,7 @@ slug: ai-quiz
 featured: false
 status: Complete
 type: desktop
-github: "#"
+github: https://github.com/petkov93/TheAIQuizApp
 tech:
   - Python
   - CustomTkinter

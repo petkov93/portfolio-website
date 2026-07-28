@@ -1,7 +1,7 @@
 ---
 email: petkow93@proton.me
 github: https://github.com/petkov93
-cvHref: "#"
+cvHref: /PetkoPetkovCV.pdf
 ---
 
-Reach out for backend roles, project collaboration, or to request a CV.
+Open to Python backend roles and project collaboration. Drop me an email, browse my code on GitHub, or download my CV below.

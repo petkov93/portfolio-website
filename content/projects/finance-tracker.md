@@ -4,8 +4,8 @@ slug: finance-tracker
 featured: true
 status: Active Development
 type: web
-github: "#"
-liveDemo: "#"
+github: https://github.com/petkov93/finance-tracker
+liveDemo: https://finance-tracker-1m2b.onrender.com/
 tech:
   - Python
   - Django

@@ -4,7 +4,7 @@ slug: youtube-downloader
 featured: false
 status: Complete
 type: desktop
-github: "#"
+github: https://github.com/petkov93/youtube-downloader1
 tech:
   - Python
 features:

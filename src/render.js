@@ -1,3 +1,5 @@
+const EXTERNAL_LINK_ATTRS = 'target="_blank" rel="noopener noreferrer"';
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -17,11 +19,11 @@ function renderProjectCard(project, labels) {
   const hasLiveDemo = project.liveDemo && project.liveDemo !== '#';
   const links = hasLiveDemo
     ? `<div class="project-links">
-         <a class="btn btn-primary" href="${escapeHtml(project.liveDemo)}">${escapeHtml(labels.liveDemo)}</a>
-         <a class="btn btn-ghost" href="${escapeHtml(project.github)}">${escapeHtml(labels.github)}</a>
+         <a class="btn btn-primary" href="${escapeHtml(project.liveDemo)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.liveDemo)}</a>
+         <a class="btn btn-ghost" href="${escapeHtml(project.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}</a>
        </div>`
     : `<div class="project-links">
-         <a class="btn btn-ghost" href="${escapeHtml(project.github)}">${escapeHtml(labels.github)}</a>
+         <a class="btn btn-ghost" href="${escapeHtml(project.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}</a>
        </div>`;
 
   return `
@@ -51,7 +53,7 @@ export function renderPortfolio(content) {
            <ul>${certificates.certificates
              .map(
                (cert) =>
-                 `<li><a href="${escapeHtml(cert.url || '#')}">${escapeHtml(cert.title)}</a> — ${escapeHtml(cert.provider)}</li>`
+                 `<li><a href="${escapeHtml(cert.url || '#')}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(cert.title)}</a> — ${escapeHtml(cert.provider)}</li>`
              )
              .join('')}</ul>
          </div>`
@@ -87,7 +89,7 @@ export function renderPortfolio(content) {
             <blockquote class="hero-tagline">${escapeHtml(hero.tagline)}</blockquote>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#projects">${escapeHtml(hero.ctaProjects)}</a>
-              <a class="btn btn-ghost" href="${escapeHtml(hero.cvHref)}">${escapeHtml(hero.ctaCv)}</a>
+              <a class="btn btn-ghost" href="${escapeHtml(hero.cvHref)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(hero.ctaCv)}</a>
             </div>
           </div>
           <div class="hero-visual">
@@ -177,8 +179,8 @@ export function renderPortfolio(content) {
         <div class="contact-copy">${contact.bodyHtml}</div>
         <div class="contact-links">
           <a class="btn btn-primary" href="mailto:${escapeHtml(contact.email)}">${escapeHtml(labels.email)}</a>
-          <a class="btn btn-ghost" href="${escapeHtml(contact.github)}">${escapeHtml(labels.github)}</a>
-          <a class="btn btn-ghost" href="${escapeHtml(contact.cvHref)}">${escapeHtml(labels.downloadCv)}</a>
+          <a class="btn btn-ghost" href="${escapeHtml(contact.github)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.github)}</a>
+          <a class="btn btn-ghost" href="${escapeHtml(contact.cvHref)}" ${EXTERNAL_LINK_ATTRS}>${escapeHtml(labels.downloadCv)}</a>
         </div>
       </section>
     </main>
